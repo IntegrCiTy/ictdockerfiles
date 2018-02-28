@@ -1,0 +1,13 @@
+FROM python:3
+
+RUN git clone -b feature/connection-util https://github.com/IntegrCiTy/obnl.git
+
+RUN pip install --no-cache-dir -r obnl/requirements.txt
+RUN cd obnl && python setup.py install
+
+RUN pip install docopt
+
+RUN mkdir /home/project
+WORKDIR /home/project
+
+ENTRYPOINT ["python", "server.py"] 
