@@ -12,4 +12,6 @@ RUN pip install redis docopt
 RUN mkdir /home/project
 WORKDIR /home/project
 
+ENV PYTHONDONTWRITEBYTECODE=1
+
 ENTRYPOINT ["python"]
