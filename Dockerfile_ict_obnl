@@ -1,6 +1,9 @@
 FROM python:3
 
-RUN git clone -b feature/connection-util https://github.com/IntegrCiTy/obnl.git
+RUN git clone -b feature/logger https://github.com/IntegrCiTy/obnl.git
+# RUN git clone https://github.com/IntegrCiTy/obnl.git
+
+RUN pip install --upgrade pip
 
 RUN pip install --no-cache-dir -r obnl/requirements.txt
 RUN cd obnl && python setup.py install
@@ -10,4 +13,4 @@ RUN pip install docopt
 RUN mkdir /home/project
 WORKDIR /home/project
 
-ENTRYPOINT ["python", "server.py"] 
+ENTRYPOINT ["python", "server.py"]
