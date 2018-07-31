@@ -13,4 +13,6 @@ RUN pip install docopt
 RUN mkdir /home/project
 WORKDIR /home/project
 
+ADD server.py .
+
 ENTRYPOINT ["python", "server.py"]
