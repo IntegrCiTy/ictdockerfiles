@@ -1,3 +1,5 @@
-FROM ict-base:latest
+ARG source=latest
+
+FROM ict-base:$source
 
 RUN pip install numpy pandas
