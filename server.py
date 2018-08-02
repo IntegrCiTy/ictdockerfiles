@@ -1,8 +1,10 @@
+import os
 import json
 from docopt import docopt
 
 from obnl.core.impl.server import Scheduler
 from obnl.core.impl.logs import logger
+
 
 # This doc is used by docopt to make the server callable by command line and gather easily all the given parameters
 doc = """>>> IntegrCiTy obnl command <<<

@@ -1,3 +1,5 @@
+# docker run --rm ict-obnl:develop -h
+
 FROM python:3
 
 RUN git clone -b feature/logger https://github.com/IntegrCiTy/obnl.git
@@ -13,6 +15,6 @@ RUN pip install docopt
 RUN mkdir /home/project
 WORKDIR /home/project
 
-ADD server.py $WORKDIR
+ADD server.py /home
 
-ENTRYPOINT ["python", "server.py"]
+ENTRYPOINT ["python", "/home/server.py"]
